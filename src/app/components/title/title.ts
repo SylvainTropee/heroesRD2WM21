@@ -8,4 +8,21 @@ import { Component } from '@angular/core';
 })
 export class Title {
 
+  public title : string;
+
+  constructor() {
+    this.title = "Super Heroes !";
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+

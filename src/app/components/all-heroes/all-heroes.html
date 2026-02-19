@@ -1,1 +1,10 @@
-<p>all-heroes works!</p>
+<div class="center">
+  <button (click)="addHeroes()">Charger !!!</button>
+</div>
+<div>
+  <div class="heroes">
+    @for (hero of heroes; track $index) {
+      <img [src]="hero.image" alt="{{ hero.name }}">
+    }
+  </div>
+</div>
