@@ -1,3 +1,10 @@
-<p>
-  Infos du héros {{ id }}, coming soon !!
-</p>
+@if (hero) {
+  <div>
+    {{ hero.name }}
+    <img [src]="hero.image" alt="{{hero.name}}">
+  </div>
+} @else {
+  <div>
+    Oooops ! Ce héros n'existe pas !
+  </div>
+}

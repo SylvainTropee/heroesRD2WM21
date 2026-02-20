@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {HeroApi} from '../../services/hero-api';
+import {Hero} from '../../models/hero';
 
 @Component({
   selector: 'app-hero-detail',
@@ -10,9 +12,19 @@ import {ActivatedRoute} from '@angular/router';
 export class HeroDetail {
 
   public id : string | null
+  public hero : Hero | undefined
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private heroService : HeroApi) {
     this.id = this.route.snapshot.paramMap.get('id')
+    if(this.id){
+      this.hero = this.heroService.findHeroById(+this.id)
+    }
+
   }
+
+
+
+
+
 
 }
